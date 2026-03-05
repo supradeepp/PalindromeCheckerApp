@@ -1,6 +1,12 @@
-import java.util.Stack;
-import java.util.Queue;
-import java.util.LinkedList;
+class Node {
+    char data;
+    Node next;
+
+    Node(char data) {
+        this.data = data;
+        this.next = null;
+    }
+}
 
 public class PalindromeCheckerApp {
 
@@ -8,25 +14,51 @@ public class PalindromeCheckerApp {
 
         String input = "madam";
 
-        Stack<Character> stack = new Stack<>();
-        Queue<Character> queue = new LinkedList<>();
+        Node head = null;
+        Node tail = null;
 
         for (int i = 0; i < input.length(); i++) {
-            stack.push(input.charAt(i));
-            queue.add(input.charAt(i));
+            Node newNode = new Node(input.charAt(i));
+
+            if (head == null) {
+                head = newNode;
+                tail = newNode;
+            } else {
+                tail.next = newNode;
+                tail = newNode;
+            }
         }
+
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        Node prev = null;
+        Node current = slow;
+
+        while (current != null) {
+            Node next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+
+        Node firstHalf = head;
+        Node secondHalf = prev;
 
         boolean isPalindrome = true;
 
-        while (!stack.isEmpty()) {
-
-            char stackChar = stack.pop();
-            char queueChar = queue.remove();
-
-            if (stackChar != queueChar) {
+        while (secondHalf != null) {
+            if (firstHalf.data != secondHalf.data) {
                 isPalindrome = false;
                 break;
             }
+            firstHalf = firstHalf.next;
+            secondHalf = secondHalf.next;
         }
 
         if (isPalindrome) {
@@ -34,6 +66,5 @@ public class PalindromeCheckerApp {
         } else {
             System.out.println(input + " is not a Palindrome");
         }
-
     }
 }
