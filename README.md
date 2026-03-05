@@ -1,7 +1,7 @@
-Use Case 3:
-Palindrome Check Using String Reverse
+Use Case 4:
+Character Array Based Palindrome Check
 
 Flow:
-- Reverse string using loop
-- Compare original and reversed string
+- Convert string to char array
+- Compare start and end characters
 - Display result
