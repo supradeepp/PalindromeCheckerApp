@@ -1,8 +1,8 @@
-Use Case 8:
-Linked List Based Palindrome Checker
+Use Case 7:
+Deque-Based Optimized Palindrome Checker
 
 Flow:
-- Convert string to linked list
-- Reverse second half
-- Compare both halves
+- Insert characters into deque
+- Remove first and last elements
+- Compare characters
 - Display result
