@@ -1,8 +1,8 @@
-Use Case 6:
-Queue + Stack Based Palindrome Check
+Use Case 8:
+Linked List Based Palindrome Checker
 
 Flow:
-- Enqueue characters
-- Push characters to stack
-- Compare dequeue vs pop
+- Convert string to linked list
+- Reverse second half
+- Compare both halves
 - Display result
