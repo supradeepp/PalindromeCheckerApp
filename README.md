@@ -1,4 +1,4 @@
-PalindromeCheckerApp
+# PalindromeCheckerApp
 
 Objective:
 Build a Java application to check palindrome strings.
