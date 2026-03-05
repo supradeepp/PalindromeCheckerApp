@@ -1,12 +1,7 @@
-# PalindromeCheckerApp
-
-Objective:
-Build a Java application to check palindrome strings.
-
-Use Case 1:
-Application Entry and Welcome Message
+Use Case 2:
+Hardcoded Palindrome Validation
 
 Flow:
 - Program starts
-- Welcome message displayed
-- Version displayed
+- Hardcoded string is checked
+- Result displayed
