@@ -1,7 +1,8 @@
-Use Case 4:
-Character Array Based Palindrome Check
+Use Case 5:
+Stack-Based Palindrome Checker
 
 Flow:
-- Convert string to char array
-- Compare start and end characters
+- Push characters into stack
+- Pop characters to reverse
+- Compare with original string
 - Display result
