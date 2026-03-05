@@ -1,7 +1,7 @@
-Use Case 2:
-Hardcoded Palindrome Validation
+Use Case 3:
+Palindrome Check Using String Reverse
 
 Flow:
-- Program starts
-- Hardcoded string is checked
-- Result displayed
+- Reverse string using loop
+- Compare original and reversed string
+- Display result
