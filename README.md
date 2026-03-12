@@ -1,7 +1,8 @@
-Use Case 10:
-Case-Insensitive and Space-Ignored Palindrome
+Use Case 11:
+Object-Oriented Palindrome Service
 
 Flow:
-- Normalize string (remove spaces, convert to lowercase)
-- Compare characters from both ends
-- Display resultgit
+- Create PalindromeChecker class
+- Implement checkPalindrome() method
+- Call method from main application
+- Display result
