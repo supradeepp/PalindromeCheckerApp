@@ -1,8 +1,8 @@
-Use Case 7:
-Deque-Based Optimized Palindrome Checker
+Use Case 9:
+Recursive Palindrome Checker
 
 Flow:
-- Insert characters into deque
-- Remove first and last elements
-- Compare characters
+- Compare start and end characters
+- Recursive call for inner substring
+- Base condition ends recursion
 - Display result
