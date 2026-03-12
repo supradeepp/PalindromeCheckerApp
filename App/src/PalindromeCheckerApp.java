@@ -2,13 +2,27 @@ import java.util.Stack;
 import java.util.Deque;
 import java.util.ArrayDeque;
 
-interface PalindromeStrategy {
-    boolean checkPalindrome(String input);
-}
+public class PalindromeCheckerApp {
 
-class StackStrategy implements PalindromeStrategy {
+    public static boolean twoPointerCheck(String input) {
 
-    public boolean checkPalindrome(String input) {
+        int start = 0;
+        int end = input.length() - 1;
+
+        while (start < end) {
+
+            if (input.charAt(start) != input.charAt(end)) {
+                return false;
+            }
+
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+
+    public static boolean stackCheck(String input) {
 
         Stack<Character> stack = new Stack<>();
 
@@ -24,11 +38,8 @@ class StackStrategy implements PalindromeStrategy {
 
         return input.equals(reversed);
     }
-}
 
-class DequeStrategy implements PalindromeStrategy {
-
-    public boolean checkPalindrome(String input) {
+    public static boolean dequeCheck(String input) {
 
         Deque<Character> deque = new ArrayDeque<>();
 
@@ -48,26 +59,30 @@ class DequeStrategy implements PalindromeStrategy {
 
         return true;
     }
-}
-
-public class  PalindromeCheckerApp{
 
     public static void main(String[] args) {
 
         String input = "madam";
 
-        PalindromeStrategy strategy;
+        long start1 = System.nanoTime();
+        boolean result1 = twoPointerCheck(input);
+        long end1 = System.nanoTime();
 
-        // choose algorithm
-        strategy = new StackStrategy();
-        // strategy = new DequeStrategy();
+        long start2 = System.nanoTime();
+        boolean result2 = stackCheck(input);
+        long end2 = System.nanoTime();
 
-        boolean result = strategy.checkPalindrome(input);
+        long start3 = System.nanoTime();
+        boolean result3 = dequeCheck(input);
+        long end3 = System.nanoTime();
 
-        if (result) {
-            System.out.println(input + " is a Palindrome");
-        } else {
-            System.out.println(input + " is not a Palindrome");
-        }
+        System.out.println("Two Pointer Result: " + result1);
+        System.out.println("Execution Time: " + (end1 - start1) + " ns");
+
+        System.out.println("Stack Result: " + result2);
+        System.out.println("Execution Time: " + (end2 - start2) + " ns");
+
+        System.out.println("Deque Result: " + result3);
+        System.out.println("Execution Time: " + (end3 - start3) + " ns");
     }
 }
