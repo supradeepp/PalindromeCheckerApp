@@ -1,8 +1,7 @@
-Use Case 9:
-Recursive Palindrome Checker
+Use Case 10:
+Case-Insensitive and Space-Ignored Palindrome
 
 Flow:
-- Compare start and end characters
-- Recursive call for inner substring
-- Base condition ends recursion
-- Display result
+- Normalize string (remove spaces, convert to lowercase)
+- Compare characters from both ends
+- Display resultgit
