@@ -1,8 +1,7 @@
-Use Case 11:
-Object-Oriented Palindrome Service
+Use Case 12:
+Strategy Pattern for Palindrome Algorithms
 
 Flow:
-- Create PalindromeChecker class
-- Implement checkPalindrome() method
-- Call method from main application
-- Display result
+- Define PalindromeStrategy interface
+- Implement StackStrategy and DequeStrategy
+- Select strategy dynamically at runtime
